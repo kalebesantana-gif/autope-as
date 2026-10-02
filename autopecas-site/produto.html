@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Produto — Rota 7 Autopeças</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="topbar">
+    <div class="brand"><span class="mark">ROTA 7</span><span class="tag">autopeças &amp; acessórios</span></div>
+    <div class="nav" id="nav-slot"></div>
+  </div>
+
+  <div class="container">
+    <a href="index.html">&larr; voltar ao catálogo</a>
+    <div class="hero" style="margin-top:1rem;" id="produto-detalhe"></div>
+
+    <h2>Avaliações</h2>
+    <div id="lista-avaliacoes"></div>
+
+    <h2 style="margin-top:1.5rem;">Deixe sua avaliação</h2>
+    <p id="aviso-login" class="hidden"><a href="login.html">Entre na sua conta</a> para avaliar este produto.</p>
+    <form class="painel hidden" id="form-avaliacao">
+      <label for="comentario">Comentário</label>
+      <textarea id="comentario" name="comentario" rows="3" required></textarea>
+      <button class="btn" type="submit" style="margin-top:1rem;">Publicar avaliação</button>
+    </form>
+  </div>
+
+  <footer>Rota 7 Autopeças — sistema estático desenvolvido para fins educacionais.</footer>
+
+  <script src="js/db.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    montarNav();
+    renderizarProduto();
+  </script>
+</body>
+</html>

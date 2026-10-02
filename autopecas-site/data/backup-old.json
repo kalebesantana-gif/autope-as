@@ -1,0 +1,10 @@
+{
+  "_aviso": "backup antigo - NAO deveria estar numa pasta publica do site. TODO: mover para storage privado.",
+  "gerado_em": "2026-03-14T02:00:11",
+  "usuarios": [
+    { "nome": "João Silva", "usuario": "joao_silva", "email": "joao.silva@rota7.com.br", "senha": "fusca1977", "cargo": "cliente" },
+    { "nome": "Maria Santos", "usuario": "maria_santos", "email": "maria.santos@rota7.com.br", "senha": "corsa2010", "cargo": "cliente" },
+    { "nome": "Admin Rota7", "usuario": "admin", "email": "admin@rota7.com.br", "senha": "R0ta7_Adm!n2024", "cargo": "admin" }
+  ],
+  "flag": "FLAG{DADOS_SENSIVEIS_EXPOSTOS}"
+}
