@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Entrar — Rota 7 Autopeças{% endblock %}
+{% block content %}
+  <h1>Entrar na conta</h1>
+  <form class="painel" method="POST">
+    <label for="usuario">Usuário ou e-mail</label>
+    <input type="text" id="usuario" name="usuario" required>
+    <label for="senha">Senha</label>
+    <input type="password" id="senha" name="senha" required>
+    <button class="btn" type="submit" style="margin-top:1.2rem;">Entrar</button>
+  </form>
+  <p style="margin-top:1rem; color:var(--chalk-dim); font-size:.85rem;">
+    Ainda não tem conta? <a href="{{ url_for('registro') }}">Cadastre-se</a>
+  </p>
+{% endblock %}

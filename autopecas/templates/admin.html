@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}Painel administrativo — Rota 7 Autopeças{% endblock %}
+{% block content %}
+  <h1>Painel administrativo</h1>
+  <p style="color:var(--chalk-dim);">Visão geral da loja.</p>
+
+  <div class="grid" style="grid-template-columns: repeat(auto-fill, minmax(160px,1fr)); margin-bottom:1.6rem;">
+    <div class="card"><h2>{{ total_produtos }}</h2><p>produtos cadastrados</p></div>
+    <div class="card"><h2>{{ total_usuarios }}</h2><p>usuários cadastrados</p></div>
+    <div class="card"><h2>{{ total_pedidos }}</h2><p>pedidos realizados</p></div>
+  </div>
+
+  <a class="btn" href="{{ url_for('admin_usuarios') }}">Ver todos os usuários</a>
+
+  <!-- painel interno - acesso restrito -->
+  <p style="margin-top:2rem; color:var(--chalk-dim); font-size:.8rem;">
+    Checklist de infraestrutura: backups ok, SSL ok, firewall ok. FLAG{CONTROLE_ACESSO_QUEBRADO}
+  </p>
+  {% if sessao_adulterada %}
+    <p style="color:var(--danger); font-size:.8rem;">
+      Aviso de auditoria: sessão atual não corresponde a um cargo de administrador válido no banco de dados. FLAG{COOKIE_ROLE_ADULTERADO}
+    </p>
+  {% endif %}
+{% endblock %}

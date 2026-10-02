@@ -1,0 +1,134 @@
+:root {
+  --asphalt: #1b1d1f;
+  --asphalt-light: #26292c;
+  --metal: #3a3e42;
+  --signal: #e8601c;
+  --signal-dim: #b84f1a;
+  --chalk: #f1ede4;
+  --chalk-dim: #b9b4a9;
+  --ok: #4f9d5a;
+  --danger: #c4453a;
+  --radius: 3px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--asphalt);
+  color: var(--chalk);
+  font-family: "Inter", "Segoe UI", Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+}
+
+h1, h2, h3 { font-family: "Oswald", "Arial Narrow", sans-serif; letter-spacing: .01em; margin: 0 0 .4em; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.4rem; }
+
+a { color: var(--signal); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.topbar {
+  background: var(--asphalt-light);
+  border-bottom: 3px solid var(--signal);
+  padding: .9rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: .6rem;
+}
+
+.brand { display: flex; align-items: baseline; gap: .5rem; font-family: "Oswald", sans-serif; }
+.brand .mark { color: var(--signal); font-weight: 700; font-size: 1.3rem; }
+.brand .tag { color: var(--chalk-dim); font-size: .8rem; }
+
+.nav { display: flex; gap: 1.1rem; align-items: center; flex-wrap: wrap; }
+.nav a { color: var(--chalk); font-size: .92rem; }
+.nav .pill {
+  background: var(--metal);
+  padding: .3rem .7rem;
+  border-radius: var(--radius);
+}
+
+.container { max-width: 1040px; margin: 0 auto; padding: 1.8rem 1.5rem 3rem; }
+
+.hero {
+  background: linear-gradient(135deg, var(--asphalt-light), var(--asphalt));
+  border-left: 4px solid var(--signal);
+  padding: 2rem;
+  margin-bottom: 1.8rem;
+  border-radius: var(--radius);
+}
+.hero p { color: var(--chalk-dim); max-width: 60ch; }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  background: var(--asphalt-light);
+  border: 1px solid var(--metal);
+  border-radius: var(--radius);
+  padding: 1.1rem;
+}
+
+.card .emoji { font-size: 1.8rem; }
+.card .preco { color: var(--signal); font-weight: 700; font-size: 1.1rem; }
+.card .categoria { color: var(--chalk-dim); font-size: .78rem; text-transform: lowercase; }
+
+.btn {
+  display: inline-block;
+  background: var(--signal);
+  color: var(--asphalt);
+  border: none;
+  padding: .55rem 1.1rem;
+  border-radius: var(--radius);
+  font-weight: 600;
+  cursor: pointer;
+  font-size: .92rem;
+}
+.btn:hover { background: var(--signal-dim); text-decoration: none; }
+.btn.secundario { background: transparent; color: var(--chalk); border: 1px solid var(--metal); }
+
+form.painel {
+  background: var(--asphalt-light);
+  border: 1px solid var(--metal);
+  border-radius: var(--radius);
+  padding: 1.4rem;
+  max-width: 400px;
+}
+
+label { display: block; margin: .7rem 0 .3rem; font-size: .88rem; color: var(--chalk-dim); }
+input, textarea, select {
+  width: 100%;
+  background: var(--asphalt);
+  border: 1px solid var(--metal);
+  color: var(--chalk);
+  padding: .55rem .7rem;
+  border-radius: var(--radius);
+  font-size: .95rem;
+}
+
+.flash {
+  padding: .7rem 1rem;
+  border-radius: var(--radius);
+  margin-bottom: 1rem;
+  font-size: .9rem;
+}
+.flash.erro { background: rgba(196,69,58,.15); border: 1px solid var(--danger); color: #f3b3ac; }
+.flash.ok { background: rgba(79,157,90,.15); border: 1px solid var(--ok); color: #b7e0bd; }
+
+table { width: 100%; border-collapse: collapse; margin-top: .8rem; }
+th, td { text-align: left; padding: .6rem .5rem; border-bottom: 1px solid var(--metal); font-size: .9rem; }
+th { color: var(--chalk-dim); font-weight: 600; font-size: .78rem; text-transform: lowercase; }
+
+.badge { background: var(--metal); padding: .15rem .5rem; border-radius: var(--radius); font-size: .76rem; }
+.badge.admin { background: var(--signal); color: var(--asphalt); }
+
+.review { border-top: 1px solid var(--metal); padding: .6rem 0; font-size: .9rem; }
+.review .autor { color: var(--signal); font-weight: 600; margin-right: .4rem; }
+
+footer { text-align: center; color: var(--chalk-dim); font-size: .8rem; padding: 2rem 0 1rem; }

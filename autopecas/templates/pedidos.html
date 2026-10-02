@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}Meus pedidos — Rota 7 Autopeças{% endblock %}
+{% block content %}
+  <h1>Meus pedidos</h1>
+  {% if pedidos %}
+    <table>
+      <tr><th>Pedido</th><th>Itens</th><th>Total</th><th>Status</th><th></th></tr>
+      {% for p in pedidos %}
+        <tr>
+          <td>#{{ p['id'] }}</td>
+          <td>{{ p['itens'] }}</td>
+          <td>R$ {{ "%.2f"|format(p['total']) }}</td>
+          <td>{{ p['status'] }}</td>
+          <td><a href="{{ url_for('pedido', pedido_id=p['id']) }}">ver detalhes</a></td>
+        </tr>
+      {% endfor %}
+    </table>
+  {% else %}
+    <p style="color:var(--chalk-dim);">Você ainda não fez nenhum pedido.</p>
+  {% endif %}
+{% endblock %}

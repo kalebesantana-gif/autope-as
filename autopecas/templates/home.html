@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}Rota 7 Autopeças — Catálogo{% endblock %}
+{% block content %}
+  <div class="hero">
+    <h1>Peças de verdade pro seu carro rodar</h1>
+    <p>Freios, elétrica, suspensão e motor com entrega pra todo o DF. Confira o catálogo abaixo.</p>
+  </div>
+
+  <div class="grid">
+    {% for p in produtos %}
+      <div class="card">
+        <div class="emoji">{{ p['imagem_emoji'] }}</div>
+        <h2>{{ p['nome'] }}</h2>
+        <div class="categoria">{{ p['categoria'] }}</div>
+        <p>{{ p['descricao'] }}</p>
+        <div class="preco">R$ {{ "%.2f"|format(p['preco']) }}</div>
+        <p style="margin:.5rem 0 1rem; color:var(--chalk-dim); font-size:.85rem;">{{ p['estoque'] }} em estoque</p>
+        <a class="btn" href="{{ url_for('produto', produto_id=p['id']) }}">Ver produto</a>
+      </div>
+    {% endfor %}
+  </div>
+{% endblock %}
